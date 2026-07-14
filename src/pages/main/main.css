@@ -119,9 +119,9 @@ img {
   color: #fff;
 }
 
-/* Главный экран */
 .main {
 }
+
 .welcome {
   box-sizing: border-box; /* чтобы padding не увеличивал размер блока */
   min-height: 100vh; /* чтобы блок занимал всю высоту экрана */
