@@ -1,10 +1,10 @@
-const FOOD_FIELDS = {
-  ID: "id",
-  TITLE: "title",
-  DESC: "desc",
-  PRICE: "price",
-  IMG: "img",
-}; // постоянные типы
+// const FOOD_FIELDS = {
+//   ID: "id",
+//   TITLE: "title",
+//   DESC: "desc",
+//   PRICE: "price",
+//   IMG: "img",
+// }; // постоянные типы
 
 export interface FoodMenuType {
   id?: string;

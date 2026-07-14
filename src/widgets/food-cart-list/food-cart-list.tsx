@@ -1,4 +1,3 @@
-import React from "react";
 import { useAddToCartStore } from "../../shared/stores/add-to-cart";
 import { FoodCartItem } from "../food-cart-item/ui/food-cart-item";
 

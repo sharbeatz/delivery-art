@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import OrderButton from "../order-button/order-button";
 import { routes } from "../../app/routes";
 
 export default function Header() {

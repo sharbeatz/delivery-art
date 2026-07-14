@@ -1,5 +1,4 @@
 import { FoodMenuList } from "../../widgets/food-menu-list/food-menu-list";
-import Filter from "../../widgets/filter/filter";
 
 export default function Menu() {
   return (
