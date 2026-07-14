@@ -1,0 +1,46 @@
+.menu__filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__filter-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #312F30;
+    cursor: pointer;
+    color: white;
+
+    
+}
+
+.menu__filter-food {
+    display: flex;
+    gap: 10px;
+   
+}
+
+.menu__filter-text {
+  
+}
+
+.menu__filter-categories {
+  display: flex;
+  gap: 2 px;
+  align-items: center;
+}
+
+.menu__filter-select {
+    border: none;
+    color: #F6762C;
+  /* Дополнительно для IE */
+  background: transparent;
+  font-size: 16px;   
+  width: fit-content;
+  text-align: left;
+}
+
+.menu__filter-option {
+    color: black;
+}   
+
