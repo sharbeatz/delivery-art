@@ -1,42 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Общие стили */
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: #1C1C1C;
-    color: #fff;
-    margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #1c1c1c;
+  color: #fff;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 1145px;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1145px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
-p+p {
-    margin-top: 15px;
+p + p {
+  margin-top: 15px;
 } /* чтобы абзацы внутри блока имели отступ сверху */
 
 /* .btn {
@@ -59,119 +63,106 @@ p+p {
 } */
 
 img {
-    max-width: 100%; /* чтобы картинки не выходили за пределы своих блоков */
+  max-width: 100%; /* чтобы картинки не выходили за пределы своих блоков */
 }
 
 .btn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* Шапка */
 .header {
-    padding: 25px 0;
+  padding: 25px 0;
 }
 
 .header__container {
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo {
-
 }
 
 .header__nav:hover {
-    
-} 
+}
 
 .header__list {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .header__link {
-    font-style: 14px;
-    opacity: 0.7;
+  font-style: 14px;
+  opacity: 0.7;
 }
 
 .header__link:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .header__link--active {
-    opacity: 1;
-    transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .header__link--active:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .header__link {
-
 }
 
 .header__cart {
-    font-size: 30px;
-    text-decoration: none;
-    color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  color: #fff;
 }
-
 
 /* Главный экран */
 .main {
-
 }
 .welcome {
-    box-sizing: border-box; /* чтобы padding не увеличивал размер блока */
-    min-height: 100vh; /* чтобы блок занимал всю высоту экрана */
+  box-sizing: border-box; /* чтобы padding не увеличивал размер блока */
+  min-height: 100vh; /* чтобы блок занимал всю высоту экрана */
 
-
-    margin-top: -100px; /* чтобы картинка залезла под шапку */
-    padding: 240px 0;
-    background-image: url("./images/welcome-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; /* растянуть картинку на всю ширину */
-    background-position: center; /* центрировать картинку */
+  margin-top: -100px; /* чтобы картинка залезла под шапку */
+  padding: 240px 0;
+  background-image: url("/images/welcome-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* растянуть картинку на всю ширину */
+  background-position: center; /* центрировать картинку */
 }
 
 .welcome__inner-wrapper {
-    max-width: 550px;
+  max-width: 550px;
 }
 
 .welcome__subtitle {
-    margin-bottom: 7px;
-    font-size: 14px;
-    letter-spacing: 0.1em; /* интервал между буквами */
+  margin-bottom: 7px;
+  font-size: 14px;
+  letter-spacing: 0.1em; /* интервал между буквами */
 }
 .welcome__title {
-    font-size: 58px;
+  font-size: 58px;
 }
 .welcome__desc {
-    margin: 40px 0;
-    font-size: 18px;
-    opacity: 0.7;
-
+  margin: 40px 0;
+  font-size: 18px;
+  opacity: 0.7;
 }
 
 .welcome__container {
-    
 }
-
-
-
 
 /* Секция с карточками еды */
 .food-list {
-    padding: 100px 0;
+  padding: 100px 0;
 }
 
 .food-list__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* чтобы карточки переносились на следующую строку при нехватке места */
-    gap: 10px; /* отступы между карточками */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* чтобы карточки переносились на следующую строку при нехватке места */
+  gap: 10px; /* отступы между карточками */
 }
-
