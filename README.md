@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# Delivery Art
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Веб-приложение для сервиса доставки еды, разработанное на базе React и сборщика Vite. Приложение предоставляет пользователям удобный интерфейс для выбора товаров, добавления их в корзину.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
 
-## React Compiler
+- **Frontend:** React, TypeScript, Vite
+- **Стилизация:** CSS3 (с использованием современных методологий разметки)
+- **Контейнеризация:** Docker, веб-сервер Nginx (в качестве Production-окружения)
+- **CI/CD:** GitHub Actions (автоматическое тестирование и линтинг)
+- **Хостинг:** Railway (автоматическое развертывание)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Запуск локально
 
-## Expanding the ESLint configuration
+Для запуска проекта в режиме разработки:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Клонируйте репозиторий:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/sharbeatz/delivery-art.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Установите все зависимости проекта:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Запустите локальный сервер разработки Vite:
+
+```bash
+npm run dev
+```
+
+## Запуск в Docker
+
+Для обеспечения воспроизводимости окружения проект контейнеризован с помощью Docker. В качестве веб-сервера внутри контейнера используется оптимизированный Nginx.
+Соберите Docker-образ приложения:
+
+```bash
+docker build -t delivery-art .
+```
+
+Запустите контейнер, пробросив порт 80 наружу:
+
+```bash
+Запустите контейнер, пробросив порт 80 наружу:
+```
+
+## CI/CD
+
+В проекте настроен полноценный пайплайн непрерывной интеграции и непрерывного развертывания (CI/CD):
+
+Continuous Integration (CI) — GitHub Actions:
+При каждом пуше или создании Pull Request в ветку main запускается workflow-сценарий, выполняющий:
+
+Скачивание кодовой базы и установку зависимостей.
+
+Статическую проверку кода линтером (npm run lint).
+
+Проверку компиляции и сборки проекта (npm run build).
+
+Тестовую сборку Docker-образа.
+
+Примечание: Слияние в ветку main заблокировано правилами защиты веток (Rulesets), если хотя бы одна из проверок CI завершилась с ошибкой.
+
+Continuous Deployment (CD) — Railway:
+После успешного прохождения всех тестов и слияния изменений в ветку main, платформа Railway автоматически инициализирует процесс сборки нового Docker-образа по инструкциям Dockerfile и разворачивает обновленную версию приложения на облачном сервере без прерывания его работы.
+
+## Переменные окружения
+
+Для правильного сопоставления портов в облачной инфраструктуре используется следующая конфигурация переменных окружения:
+
+| **Имя переменной** | **Описание**                                                           | **Пример значения** |
+| ------------------ | ---------------------------------------------------------------------- | ------------------- |
+| `PORT`             | Внутренний порт контейнера, который слушает Nginx и проксирует Railway | `80`                |
+
+## Публичный URL
+
+https://delivery-art-production.up.railway.app/
